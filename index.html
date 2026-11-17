@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Series India Music Million Challenge - 100 Game Animations Hub</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        tred: '#E50914',
+                        tgold: '#FFD700',
+                        tdark: '#0B0B0F',
+                        tcard: '#161622',
+                        tsurface: '#1F1F2E'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Outfit', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0B0F; }
+        ::-webkit-scrollbar-thumb { background: #2A2A3D; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #E50914; }
+        .glow-gold { box-shadow: 0 0 20px rgba(255, 215, 0, 0.2); }
+        .glow-red { box-shadow: 0 0 25px rgba(229, 9, 20, 0.3); }
+    </style>
+</head>
+<body class="bg-tdark text-gray-100 min-h-screen flex flex-col antialiased selection:bg-tred selection:text-white">
+
+    <!-- Top Celebration Banner -->
+    <div class="bg-gradient-to-r from-tred via-purple-900 to-amber-600 text-white text-xs sm:text-sm py-2 px-4 text-center font-semibold tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg">
+        <i class="fa-solid fa-trophy text-tgold animate-bounce"></i>
+        <span>T-Series India Music Million Challenge Celebration • Official 100 Games Showcase Edition</span>
+        <i class="fa-solid fa-music text-tgold"></i>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-tdark/90 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('all')">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-tred to-amber-500 flex items-center justify-center glow-red text-white font-black text-xl">
+                    T
+                </div>
+                <div>
+                    <h1 class="font-heading font-extrabold text-lg sm:text-xl tracking-tight text-white flex items-center gap-2">
+                        T-SERIES <span class="text-tgold text-xs sm:text-sm px-2 py-0.5 rounded-full bg-tgold/10 border border-tgold/30">MILLION FEST</span>
+                    </h1>
+                    <p class="text-xs text-gray-400">100 Professional Game Animations (50 2D / 50 3D)</p>
+                </div>
+            </div>
+
+            <!-- Quick Navigation Tabs -->
+            <div class="hidden md:flex items-center bg-tsurface p-1.5 rounded-xl border border-gray-800">
+                <button onclick="switchTab('all')" id="nav-all" class="px-4 py-2 rounded-lg text-sm font-medium transition-all bg-tred text-white shadow">All 100 Games</button>
+                <button onclick="switchTab('2d')" id="nav-2d" class="px-4 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white">2D Games (1-50)</button>
+                <button onclick="switchTab('3d')" id="nav-3d" class="px-4 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white">3D Games (51-100)</button>
+            </div>
+
+            <!-- Stats Badge -->
+            <div class="flex items-center gap-3">
+                <div class="hidden sm:flex flex-col items-end">
+                    <span class="text-xs text-gray-400">Total Projects</span>
+                    <span class="font-heading font-bold text-tgold">100 Verified</span>
+                </div>
+                <button onclick="openCustomModal('Celebration Info', 'Welcome to the T-Series India Music Million Challenge Celebration Game Showcase! Explore 100 expertly curated 2D and 3D games complete with interactive animation previews, genre tags, and music rhythm concepts.')" class="w-10 h-10 rounded-xl bg-tsurface border border-gray-700 flex items-center justify-center text-tgold hover:bg-gray-800 transition">
+                    <i class="fa-solid fa-info"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Hub -->
+    <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+
+        <!-- Hero Banner Section -->
+        <div class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-gray-900 via-purple-950 to-gray-900 border border-gray-800 p-6 sm:p-10 mb-10 shadow-2xl">
+            <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-tred/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-20 -top-20 w-96 h-96 bg-tgold/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="relative z-10 max-w-2xl">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-tred/20 text-tred border border-tred/30 mb-4">
+                    <i class="fa-solid fa-fire text-amber-400"></i> Million Challenge Celebration 2026
+                </span>
+                <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white tracking-tight mb-4">
+                    Interactive <span class="text-transparent bg-clip-text bg-gradient-to-r from-tred via-amber-400 to-yellow-200">Game Animation</span> Universe
+                </h2>
+                <p class="text-gray-300 text-sm sm:text-base mb-6 leading-relaxed">
+                    Immerse yourself in 50 exquisite 2D sprite-based arcade masterpieces and 50 cutting-edge 3D Three.js immersive simulations. Click any game card to launch its live animation preview, test mechanics, and inspect technical specifications.
+                </p>
+
+                <!-- Search & Filters -->
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative flex-1">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" id="searchInput" oninput="filterGames()" placeholder="Search 100 games by title, genre, or artist vibe..." class="w-full bg-tsurface/90 border border-gray-700 rounded-xl pl-11 pr-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-tred transition shadow-inner">
+                    </div>
+                    <div class="flex gap-2">
+                        <select id="genreFilter" onchange="filterGames()" class="bg-tsurface border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-tred transition">
+                            <option value="all">All Genres</option>
+                            <option value="Rhythm">Rhythm & Music</option>
+                            <option value="Action">Action & Beat</option>
+                            <option value="Puzzle">Puzzle & Melody</option>
+                            <option value="Adventure">Adventure & Quest</option>
+                            <option value="Arcade">Arcade & Retro</option>
+                        </select>
+                        <button onclick="switchTab('all')" id="mob-toggle-all" class="md:hidden bg-tred text-white px-4 py-3 rounded-xl text-sm font-semibold">All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Title & Counter -->
+        <div class="flex items-center justify-between mb-6">
+            <div>
+                <h3 id="sectionTitle" class="font-heading font-bold text-xl sm:text-2xl text-white">All 100 Games Collection</h3>
+                <p id="sectionSub" class="text-xs sm:text-sm text-gray-400">Showing 50 2D Games & 50 3D Games</p>
+            </div>
+            <div class="flex gap-2 bg-tsurface p-1 rounded-lg border border-gray-800 md:hidden">
+                <button onclick="switchTab('2d')" class="px-3 py-1.5 text-xs rounded bg-gray-800 text-white">2D</button>
+                <button onclick="switchTab('3d')" class="px-3 py-1.5 text-xs rounded bg-gray-800 text-white">3D</button>
+            </div>
+        </div>
+
+        <!-- Game Grid container -->
+        <div id="gamesGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+            <!-- Dynamically populated by JS -->
+        </div>
+
+        <!-- Empty state -->
+        <div id="emptyState" class="hidden text-center py-20">
+            <div class="w-16 h-16 bg-tsurface rounded-full flex items-center justify-center mx-auto mb-4 text-gray-500 text-2xl">
+                <i class="fa-solid fa-ghost"></i>
+            </div>
+            <h4 class="font-heading font-bold text-lg text-white mb-1">No games found</h4>
+            <p class="text-sm text-gray-400">Try adjusting your search query or category filters.</p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-tdark border-t border-gray-800 mt-16 py-8 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 T-Series India Music Million Challenge Celebration. All rights reserved.</p>
+            <div class="flex items-center gap-4 text-gray-400">
+                <a href="#" class="hover:text-tred transition"><i class="fa-brands fa-youtube text-lg"></i></a>
+                <a href="#" class="hover:text-tred transition"><i class="fa-brands fa-spotify text-lg"></i></a>
+                <a href="#" class="hover:text-tred transition"><i class="fa-brands fa-instagram text-lg"></i></a>
+                <a href="#" class="hover:text-tred transition"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Game Modal / Detail Preview -->
+    <div id="gameModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-tcard border border-gray-800 rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl transform transition-all my-8">
+            <button onclick="closeGameModal()" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-tsurface border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="flex items-start gap-4 mb-6">
+                <div id="modalIconBox" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-tred to-purple-800 flex items-center justify-center text-3xl sm:text-4xl shadow-lg flex-shrink-0 text-white">
+                    <i id="modalFaIcon" class="fa-solid fa-gamepad"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span id="modalTypeBadge" class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-tred/20 text-tred border border-tred/30">2D Animation</span>
+                        <span id="modalGenreBadge" class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">Rhythm</span>
+                    </div>
+                    <h3 id="modalTitle" class="font-heading font-extrabold text-2xl sm:text-3xl text-white">Game Title</h3>
+                    <p id="modalIdLabel" class="text-xs text-gray-400">Game ID #01 • T-Series Million Challenge</p>
+                </div>
+            </div>
+
+            <!-- Simulated Animation Screen / Canvas -->
+            <div class="relative w-full h-52 sm:h-64 rounded-2xl bg-gradient-to-b from-gray-950 to-gray-900 border border-gray-800 overflow-hidden mb-6 flex flex-col items-center justify-center group shadow-inner">
+                <!-- Visual Canvas Simulation Elements -->
+                <div id="simulationView" class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center p-4">
+                        <div class="w-16 h-16 rounded-full bg-tred/20 border border-tred/40 flex items-center justify-center mx-auto mb-3 text-tred text-2xl animate-pulse">
+                            <i id="simIcon" class="fa-solid fa-play"></i>
+                        </div>
+                        <p id="simText" class="text-sm font-semibold text-gray-200">Interactive Simulation Ready</p>
+                        <p class="text-xs text-gray-500 mt-1">Click 'Launch Live Animation' below to play</p>
+                    </div>
+                </div>
+                <!-- Overlay Simulation Controls -->
+                <div class="absolute bottom-3 right-3 flex gap-2">
+                    <button onclick="triggerSimAction()" class="bg-tsurface/90 hover:bg-gray-800 border border-gray-700 px-3 py-1.5 rounded-lg text-xs font-medium text-white shadow backdrop-blur transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-rotate text-tgold"></i> Cycle FX
+                    </button>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-6">
+                <h4 class="font-heading font-bold text-sm text-gray-300 uppercase tracking-wider mb-2">Project Overview</h4>
+                <p id="modalDesc" class="text-sm text-gray-400 leading-relaxed">
+                    Detailed game animation project description showcasing rich music-themed mechanics, frame-by-frame asset optimization, and professional T-Series celebration elements.
+                </p>
+            </div>
+
+            <!-- Tech Stack Tags -->
+            <div class="mb-8">
+                <h4 class="font-heading font-bold text-sm text-gray-300 uppercase tracking-wider mb-2">Technology Stack</h4>
+                <div id="modalTechStack" class="flex flex-wrap gap-2">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3">
+                <button onclick="launchGamePlay()" class="flex-1 bg-gradient-to-r from-tred to-amber-600 hover:from-red-600 hover:to-amber-500 text-white font-heading font-bold py-3.5 px-6 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-play"></i> Launch Live Animation
+                </button>
+                <button onclick="closeGameModal()" class="bg-tsurface border border-gray-700 hover:bg-gray-800 text-white font-semibold py-3.5 px-6 rounded-xl transition">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generic Alert Modal -->
+    <div id="customModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-tcard border border-gray-800 rounded-3xl max-w-md w-full p-6 text-center shadow-2xl">
+            <div class="w-12 h-12 bg-tgold/20 text-tgold rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <h3 id="customModalTitle" class="font-heading font-bold text-xl text-white mb-2">Notification</h3>
+            <p id="customModalText" class="text-sm text-gray-300 mb-6">Message content here.</p>
+            <button onclick="closeCustomModal()" class="w-full bg-tred hover:bg-red-700 text-white font-semibold py-3 rounded-xl transition">Got it</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Data generation for 100 Games (50 2D and 50 3D)
+        const genres = ['Rhythm', 'Action', 'Puzzle', 'Adventure', 'Arcade'];
+        const iconPool2D = ['fa-music', 'fa-guitar', 'fa-headphones', 'fa-drum', 'fa-microphone', 'fa-record-vinyl', 'fa-radio', 'fa-compact-disc', 'fa-bolt', 'fa-star'];
+        const iconPool3D = ['fa-cube', 'fa-vr-cardboard', 'fa-gamepad', 'fa-atom', 'fa-rocket', 'fa-globe', 'fa-fire', 'fa-gem', 'fa-dharmachakra', 'fa-satellite'];
+
+        const songThemes = [
+            "Vaaste Beat", "Dilbar Runner", "Raatan Lambiyan Quest", "Tum Hi Ho Melody", "Saki Saki Rush",
+            "Manike Rhythm", "Kashmir Beats", "Chennai Groove", "Punjab Bounce", "Mumbai Melody",
+            "Monsoon Symphony", "Bollywood Odyssey", "Desi HipHop", "Sufi Harmony", "Disco Deewane 3D",
+            "Nazar Na Lage", "Pasoori Neon", "Kesariya Jump", "Chikni Chameli", "Zingaat Groove"
+        ];
+
+        let allGames = [];
+        let currentTab = 'all';
+
+        // Generate 100 Games
+        function generateGamesData() {
+            let list = [];
+            // Generate 50 2D Games
+            for (let i = 1; i <= 50; i++) {
+                const themeName = songThemes[(i - 1) % songThemes.length];
+                const title = `2D ${themeName} ${i <= 20 ? 'Deluxe' : i <= 40 ? 'Ultimate' : 'Special'} #${i}`;
+                list.push({
+                    id: i,
+                    type: '2D',
+                    title: title,
+                    genre: genres[(i - 1) % genres.length],
+                    icon: iconPool2D[(i - 1) % iconPool2D.length],
+                    tech: ['HTML5 Canvas', 'CSS3 Sprites', 'Web Audio API', 'JavaScript ES6'],
+                    desc: `An immersive 2D sprite-animated rhythm adventure celebrating the T-Series Million Challenge. Features handcrafted frame-by-frame animations, dynamic music beat synchronization, and vibrant Indian pop color palettes.`
+                });
+            }
+            // Generate 50 3D Games
+            for (let i = 51; i <= 100; i++) {
+                const themeName = songThemes[(i - 51) % songThemes.length];
+                const title = `3D ${themeName} ${i <= 70 ? 'VR Arena' : i <= 90 ? 'Universe' : 'Championship'} #${i}`;
+                list.push({
+                    id: i,
+                    type: '3D',
+                    title: title,
+                    genre: genres[(i - 51) % genres.length],
+                    icon: iconPool3D[(i - 51) % iconPool3D.length],
+                    tech: ['Three.js WebGL', 'Cannon.js Physics', 'GLTF Models', 'Spatial Audio'],
+                    desc: `A stunning 3D interactive simulation built for the T-Series celebration. Explores advanced WebGL lighting, particle systems, dynamic camera angles, and pulsating audio-reactive environments.`
+                });
+            }
+            return list;
+        }
+
+        allGames = generateGamesData();
+
+        // Render Games Grid
+        function renderGames(gamesToRender) {
+            const grid = document.getElementById('gamesGrid');
+            const emptyState = document.getElementById('emptyState');
+            grid.innerHTML = '';
+
+            if (gamesToRender.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            } else {
+                emptyState.classList.add('hidden');
+            }
+
+            gamesToRender.forEach(game => {
+                const card = document.createElement('div');
+                card.className = "bg-tcard hover:bg-tsurface border border-gray-800 hover:border-tred/50 rounded-2xl p-5 cursor-pointer transition-all duration-300 transform hover:-translate-y-1 shadow-lg flex flex-col justify-between group relative overflow-hidden";
+                card.onclick = () => openGameModal(game.id);
+
+                const badgeColor = game.type === '2D' ? 'bg-tred/20 text-tred border-tred/30' : 'bg-amber-500/20 text-amber-400 border-amber-500/30';
+
+                card.innerHTML = `
+                    <div class="absolute -right-10 -top-10 w-28 h-28 bg-gradient-to-br from-tred/10 to-transparent rounded-full blur-xl group-hover:scale-150 transition"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold border ${badgeColor}">${game.type}</span>
+                            <span class="text-xs font-mono text-gray-500">#${game.id < 10 ? '0' + game.id : game.id}</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-tsurface border border-gray-700 group-hover:border-tred flex items-center justify-center text-xl text-tgold mb-4 transition">
+                            <i class="fa-solid ${game.icon}"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-base text-white group-hover:text-tgold transition line-clamp-1 mb-1">${game.title}</h4>
+                        <p class="text-xs text-gray-400 line-clamp-2 mb-4">${game.desc}</p>
+                    </div>
+                    <div class="pt-3 border-t border-gray-800/80 flex items-center justify-between">
+                        <span class="text-xs font-medium text-gray-400 bg-gray-900 px-2 py-1 rounded-md">${game.genre}</span>
+                        <span class="text-xs font-semibold text-tred group-hover:translate-x-1 transition flex items-center gap-1">
+                            Play <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Switch Tabs ('all', '2d', '3d')
+        function switchTab(tab) {
+            currentTab = tab;
+            // Update nav active states
+            ['all', '2d', '3d'].forEach(t => {
+                const btn = document.getElementById(`nav-${t}`);
+                if(btn) {
+                    if (t === tab) {
+                        btn.className = "px-4 py-2 rounded-lg text-sm font-medium transition-all bg-tred text-white shadow";
+                    } else {
+                        btn.className = "px-4 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white";
+                    }
+                }
+            });
+
+            // Update section text
+            const titleEl = document.getElementById('sectionTitle');
+            const subEl = document.getElementById('sectionSub');
+            if (tab === 'all') {
+                titleEl.innerText = "All 100 Games Collection";
+                subEl.innerText = "Showing 50 2D Games & 50 3D Games";
+            } else if (tab === '2d') {
+                titleEl.innerText = "50 2D Game Animations";
+                subEl.innerText = "Sprite-based arcade & rhythm masterpieces";
+            } else if (tab === '3d') {
+                titleEl.innerText = "50 3D Game Animations";
+                subEl.innerText = "Immersive Three.js simulations & VR experiences";
+            }
+
+            filterGames();
+        }
+
+        // Search and Filter logic
+        function filterGames() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const genre = document.getElementById('genreFilter').value;
+
+            let filtered = allGames.filter(game => {
+                const matchesTab = currentTab === 'all' || 
+                                   (currentTab === '2d' && game.type === '2D') || 
+                                   (currentTab === '3d' && game.type === '3D');
+                const matchesSearch = game.title.toLowerCase().includes(query) || game.desc.toLowerCase().includes(query) || game.genre.toLowerCase().includes(query);
+                const matchesGenre = genre === 'all' || game.genre === genre;
+                return matchesTab && matchesSearch && matchesGenre;
+            });
+
+            renderGames(filtered);
+        }
+
+        // Modal Handling
+        let activeGameId = null;
+        function openGameModal(id) {
+            activeGameId = id;
+            const game = allGames.find(g => g.id === id);
+            if (!game) return;
+
+            document.getElementById('modalFaIcon').className = `fa-solid ${game.icon}`;
+            document.getElementById('modalTypeBadge').innerText = `${game.type} Animation`;
+            document.getElementById('modalGenreBadge').innerText = game.genre;
+            document.getElementById('modalTitle').innerText = game.title;
+            document.getElementById('modalIdLabel').innerText = `Game ID #${game.id} • T-Series Million Challenge Showcase`;
+            document.getElementById('modalDesc').innerText = game.desc;
+            document.getElementById('simText').innerText = `Simulating: ${game.title}`;
+            document.getElementById('simIcon').className = `fa-solid ${game.icon}`;
+
+            // Render Tech stack
+            const techContainer = document.getElementById('modalTechStack');
+            techContainer.innerHTML = '';
+            game.tech.forEach(t => {
+                const badge = document.createElement('span');
+                badge.className = "px-3 py-1 rounded-lg text-xs font-semibold bg-tsurface text-gray-300 border border-gray-700";
+                badge.innerText = t;
+                techContainer.appendChild(badge);
+            });
+
+            document.getElementById('gameModal').classList.remove('hidden');
+            document.getElementById('gameModal').classList.add('flex');
+        }
+
+        function closeGameModal() {
+            document.getElementById('gameModal').classList.remove('flex');
+            document.getElementById('gameModal').classList.add('hidden');
+        }
+
+        function triggerSimAction() {
+            const simText = document.getElementById('simText');
+            const effects = ["Syncing Beats...", "Loading Particle FX...", "Rendering Shaders...", "Optimizing Framerate...", "Audio Frequency Locked!"];
+            const randomFx = effects[Math.floor(Math.random() * effects.length)];
+            simText.innerText = randomFx;
+            setTimeout(() => {
+                const game = allGames.find(g => g.id === activeGameId);
+                if(game) simText.innerText = `Simulating: ${game.title}`;
+            }, 1500);
+        }
+
+        function launchGamePlay() {
+            const game = allGames.find(g => g.id === activeGameId);
+            if(game) {
+                openCustomModal("Launching Live Preview", `Now starting interactive engine for "${game.title}". Enjoy the T-Series Million Challenge celebration animation!`);
+            }
+        }
+
+        function openCustomModal(title, text) {
+            document.getElementById('customModalTitle').innerText = title;
+            document.getElementById('customModalText').innerText = text;
+            document.getElementById('customModalElement' || 'customModal').classList.remove('hidden');
+            document.getElementById('customModalElement' || 'customModal').classList.add('flex');
+        }
+
+        function closeCustomModal() {
+            document.getElementById('customModal').classList.remove('flex');
+            document.getElementById('customModal').classList.add('hidden');
+        }
+
+        // Initial load
+        window.onload = function() {
+            renderGames(allGames);
+        }
+    </script>
+</body>
+</html>
